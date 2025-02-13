@@ -12,7 +12,7 @@ export default function ExchangeRateFetcher({
   }, [baseCurrency]);
   const fetchExchangeRate = async () => {
     try {
-      const response = await fetch(`/api/exchange/rates/${baseCurrency}`);
+      const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${baseCurrency}`);
       const data = await response.json();
 
       if (data.rates) {

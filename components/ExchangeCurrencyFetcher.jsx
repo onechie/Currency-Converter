@@ -12,7 +12,7 @@ export default function ExchangeCurrencyFetcher({
 
   const fetchExchangeCurrency = async () => {
     try {
-      const response = await fetch(`/api/exchange/currencies`);
+      const response = await fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json`);
       const data = await response.json();
 
       if (data) {

@@ -2,12 +2,10 @@
 
 import * as React from "react";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 
 export default function CurrencyInput({
-  label,
   amount,
   onAmountChange,
   currency,
@@ -17,7 +15,7 @@ export default function CurrencyInput({
   return (
     <div className="flex flex-col text-sm md:text-md lg:text-lg">
       <Select
-        value={currency}
+        value={currencies.includes(currency) ? currency : ""}
         onChange={onCurrencyChange}
         MenuProps={{
           PaperProps: {
@@ -57,10 +55,10 @@ export default function CurrencyInput({
           size="small"
           sx={{
             "& .MuiInputBase-root": {
-              fontSize: "inherit", // Ensures input box inherits font size
+              fontSize: "inherit", 
             },
             "& .MuiInputBase-input": {
-              fontSize: "inherit", // Ensures input text inherits font size
+              fontSize: "inherit",
             },
             "& .MuiOutlinedInput-root": { borderRadius: "0" },
           }}

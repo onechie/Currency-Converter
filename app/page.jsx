@@ -4,7 +4,6 @@ import { useCallback, useEffect, useState } from "react";
 import CurrencyInput from "@/components/CurrencyInput";
 import ExchangeRateFetcher from "@/components/ExchangeRateFetcher";
 import ExchangeCurrencyFetcher from "@/components/ExchangeCurrencyFetcher";
-// can you make those i con single import
 import { CurrencyExchange } from "@mui/icons-material";
 
 export default function Home() {
@@ -66,7 +65,6 @@ export default function Home() {
 
           <div className="flex gap-5 flex-col">
             <CurrencyInput
-              label={"From"}
               amount={amountFrom}
               onAmountChange={(e) => convertFromAmount(e.target.value)}
               currency={baseCurrency}
@@ -74,7 +72,6 @@ export default function Home() {
               currencies={Object.keys(exchangeRates || {})}
             />
             <CurrencyInput
-              label={"To"}
               amount={amountTo}
               onAmountChange={(e) => convertToAmount(e.target.value)}
               currency={targetCurrency}
